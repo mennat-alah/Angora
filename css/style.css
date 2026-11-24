@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-color: #f25454;
+  --bg-main-color: #fafafa;
+}
+h1,
+h2,
+h3 {
+  font-family: "Poppins", sans-serif;
+}
+
+body,
+p {
+  font-family: "Open Sans", sans-serif;
+}
+ul {
+  list-style: none; /* Removes the bullet points */
+  padding: 0; /* Removes the default left indentation */
+  margin: 0; /* Removes the default top and bottom spacing */
+}
+/* ------------------------------------------------------------ */
+/* nav */
+
+/* ------------------------------------------------------------------- */
+/* header */
+header .carousel-item {
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+}
+header .item-one {
+  background-image: url("../images/slideshow-1.jpg");
+}
+header .item-two {
+  background-image: url("../images/slideshow-2.jpg");
+}
+header .item-three {
+  background-image: url("../images/slideshow-3.jpg");
+}
+header h1 {
+  font-size: 3.5rem;
+  font-weight: bolder;
+  width: 50%;
+  line-height: 1.2;
+  letter-spacing: 2;
+}
+
+header .carousel-control-prev,
+header .carousel-control-next {
+  width: 50px;
+  height: 50px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid white;
+  margin: 0;
+  opacity: 1;
+  transition: color 0.5s;
+}
+
+header .carousel-control-next {
+  margin-top: 25px;
+}
+
+header .carousel-control-prev {
+  margin-top: -25px;
+}
+header .layer {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  left: -100%;
+  transition: left 0.3s;
+}
+.header-animation {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 20px;
+  margin: auto;
+  z-index: 10;
+}
+.header-animation .animation-item {
+  width: 30px;
+  height: 100%;
+  border-radius: 50px 50px 50px 50px;
+  border: 2px white solid;
+  position: relative;
+}
+.header-animation .animation-item::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scrolling-ball 0.7s infinite;
+}
+
+@keyframes scrolling-ball {
+  0% {
+    top: 10%;
+    opacity: 90%;
+  }
+  50% {
+    opacity: 50%;
+  }
+  100% {
+    top: 70%;
+    opacity: 10%;
+  }
+}
+/* </header> */
+
+/* ------------------------------------------------------------ */
+/* hover */
+/* header hover */
+header .carousel-control-prev:hover,
+header .carousel-control-next:hover {
+  color: var(--main-color);
+}
+header .carousel-control-prev:hover .layer,
+header .carousel-control-next:hover .layer {
+  left: 0;
+}
