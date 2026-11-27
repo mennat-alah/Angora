@@ -120,6 +120,32 @@ displayAll();
 btnAll.addEventListener("click", displayAll);
 btnBranding.addEventListener("click", displayBranding);
 btnWeb.addEventListener("click", displayWeb);
+// -----------------------------------------------------------
+// video part
+let videoBtn = document.querySelector(".video-btn");
+let videoPlace = document.querySelector(".video-watch");
+let videoCloseBtn = document.querySelector(".exit-icon");
+const iframe = document.querySelector(".video iframe");
+
+const videoSrc = "https://www.youtube.com/embed/PGG825Hg490";
+
+videoBtn.addEventListener("click", function () {
+  videoPlace.classList.remove("d-none");
+  // Enable autoplay when opening the video
+  iframe.src = videoSrc + "?autoplay=1&rel=0"; // loads AND plays
+});
+
+function closeVideo() {
+  videoPlace.classList.add("d-none");
+  iframe.src = ""; // stops the video and the sound
+}
+
+videoCloseBtn.addEventListener("click", closeVideo);
+document.addEventListener("keydown", function (e) {
+  if (e.code == "Escape") {
+    closeVideo();
+  }
+});
 
 // -----------------------------------------------------------
 // testimonial js
