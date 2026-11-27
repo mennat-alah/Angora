@@ -20,10 +20,15 @@ h6 {
 h2 {
   font-size: 5rem;
   opacity: 0.1;
+  font-weight: 600;
 }
 h3 {
   font-size: 2.5rem;
   font-weight: 700;
+  transform: translateY(25%);
+}
+.main-font {
+  color: var(--main-color);
 }
 .section-title {
   position: relative;
@@ -215,10 +220,10 @@ header .carousel-item-caption {
   list-style-type: "✓ ";
   font-size: 16px;
 }
-#mission ul li{
+#mission ul li {
   font-weight: 500;
 }
-.mission-list-item{
+.mission-list-item {
   transition: color 0.5s;
 }
 /* </mission> */
@@ -261,6 +266,55 @@ header .carousel-item-caption {
   display: flex;
 }
 /* </team> */
+/* ------------------------------------------------------------ */
+/* projects */
+#projects {
+  background-color: var(--bg-main-color);
+}
+#projects .nav-pills .nav-link.active {
+  color: var(--main-color);
+  background-color: transparent;
+  border: 1px solid var(--main-color);
+}
+#projects .nav-link:focus,
+#projects .nav-link:hover {
+  color: var(--main-color);
+}
+#projects .nav-link {
+  color: black;
+}
+.project-item-info {
+  width: 96%;
+  height: 96%;
+  top: 2%;
+  left: 2%;
+  background-color: rgba(256, 256, 256, 0.9);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.project-item img {
+  transition: transform 0.5s;
+}
+#project-item-desc {
+  font-size: 1rem;
+  transform: translateY(-50%);
+  transition: transform 0.5s;
+}
+#project-item-category {
+  font-size: 0.8rem;
+  transform: translateY(50%);
+  transition: transform 0.5s;
+}
+.project-item {
+  overflow: hidden;
+}
+#projects .col-md-3,
+#projects .col-md-6,
+#projects .col-12 {
+  margin: 0;
+  padding: 0;
+}
+/* </projects> */
 /* ------------------------------------------------------------ */
 /* services */
 #services {
@@ -373,7 +427,7 @@ header .carousel-control-next:hover .layer {
   left: 0;
 }
 /* mission hover */
-.mission-list-item:hover{
+.mission-list-item:hover {
   color: var(--main-color);
 }
 /* team hover */
@@ -388,6 +442,19 @@ header .carousel-control-next:hover .layer {
   transform: scale(1.1);
 }
 .team-member:hover .team-member-links {
+  transform: translateY(0);
+}
+/* projects hover */
+.project-item:hover img {
+  transform: scale(1.1);
+}
+.project-item:hover .project-item-info {
+  opacity: 1;
+}
+.project-item:hover #project-item-desc {
+  transform: translateY(0);
+}
+.project-item:hover #project-item-category {
   transform: translateY(0);
 }
 /* services hover */
